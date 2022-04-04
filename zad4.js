@@ -8,8 +8,9 @@ const checkBtn = document.getElementById('check-btn');
 const wynik = document.getElementById('wynik');
 
 function oblicz() {
-  let sum = parseInt(liczbaInput.value) + parseInt(liczbaInput2.value);
+  let sum = (parseFloat(liczbaInput.value) + parseFloat(liczbaInput2.value)).toFixed(3);
   return sum;
+
 }
 
 const buttonClick = () => {
