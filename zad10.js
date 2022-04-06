@@ -6,6 +6,12 @@
  const wynik = document.getElementById('wynik');
 
  function oblicz() {
-     let result = parseFloat(liczbaInput.value) 
-     if result < 0, i++;
+     let result = 0; 
+     if (parseFloat(liczbaInput.value) < 0)result++ ;
+     return result
  }
+
+ const buttonClickOblicz = () => {
+    wynik.textContent = oblicz();
+  };
+  obliczBtn.addEventListener('click', buttonClickOblicz);
