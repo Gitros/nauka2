@@ -1,17 +1,32 @@
 /*Napisz program, który wczyta z klawiatury 4 liczby rzeczywiste,
  a nastepnie wyswietli informacje ile z nich jest mniejszych od 0. */
 
- const liczbaInput = document.getElementById('liczba-input')
- const obliczBtn = document.getElementById('oblicz-btn')
- const wynik = document.getElementById('wynik');
+const numberInput = document.getElementById('number-input');
+const addBtn = document.getElementById('add-btn');
+const result = document.getElementById('result');
+const numbersOut = document.getElementById('numbers-out');
 
- function oblicz() {
-     let result = 0; 
-     if (parseFloat(liczbaInput.value) < 0)result++ ;
-     return result
- }
+const numbers = [];
+let counter = 0;
 
- const buttonClickOblicz = () => {
-    wynik.textContent = oblicz();
-  };
-  obliczBtn.addEventListener('click', buttonClickOblicz);
+
+const add = () => {
+  if (numbers.length !== 4) {
+    let n = parseInt(numberInput.value);
+    numbers.push(n);
+    const span = document.createElement('span');
+    span.textContent = n + ' ';
+    numbersOut.appendChild(span);
+    numberInput.value = null;
+
+    if (n < 0) {
+      counter++;
+    }
+
+    if (numbers.length === 4){
+       result.textContent = counter;
+    }
+  }
+}
+
+addBtn.addEventListener('click', add);
