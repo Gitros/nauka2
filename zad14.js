@@ -1,3 +1,7 @@
+/* Napisz program, który dokona zamiany podanej przez uzytkownika
+liczby naturalnej od 1 do 12 na odpowiadajacy jej miesiacu. Obsluz
+sytuacje, gdy uzytkownik poda wartosc spoza zakresu */
+
 const numberInput = document.getElementById('number-input');
 const monthBtn = document.getElementById('month-btn');
 const result = document.getElementById('result');
