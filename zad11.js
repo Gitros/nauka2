@@ -3,19 +3,19 @@ wyswietli je uporzadkowane rosnaco.*/
 const numberInput = document.getElementById('number-input');
 const addBtn = document.getElementById('add-btn');
 const result = document.getElementById('result');
-const numbersOut = document.getElementById('numbers-out');
 
 const numbers = [];
-let num = 0;
 
 const sort = () => {
-    if (numbers.sorting !== 3) {
+    if (numbers.length !== 3) {
         let n = parseInt(numberInput.value);
-        numbers.push(n)
+        numbers.push(n);
+        numberInput.value = null;
     }
-    if (numbers.sorting === 3){
-        result.textContent = sort(num);
-     }
+
+    if (numbers.length === 3){
+        result.textContent = numbers.sort();
+    }
 };
 
 addBtn.addEventListener('click', sort);
