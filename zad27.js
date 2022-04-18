@@ -5,13 +5,14 @@ const numberInput = document.getElementById('number-input');
 const paintBtn = document.getElementById('paint-btn');
 const resultOut = document.getElementById('result-out');
 
-const rysunek = () => {
-    let kreska = parseInt(numberInput.value)
-    if (kreska > 0, kreska++) {
-        resultOut =  '-'
+const paint = () => {
+    resultOut.textContent = null;
+    let n = parseInt(numberInput.value);
+    const p = document.createElement('p');
+    for(var i = 0; i < n; i++) {
+        p.textContent += '-';
     }
-    else {
-        return 'podano zla wartosc'
-    }
-
+    resultOut.appendChild(p);
 }
+
+paintBtn.addEventListener('click', paint);
